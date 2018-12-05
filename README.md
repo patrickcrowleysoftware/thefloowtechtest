@@ -1,5 +1,6 @@
-# thefloowtechtest
-Engineer Challenge - Java and MongoDB Text Processor
+
+DATABASE INFO
+-------------
 
 MONGODB VERSION INSTALLED ON WINDOWS 10
 ---------------------------------------
@@ -42,6 +43,8 @@ C:\Program Files\MongoDB\Server\4.0\bin>mongod.exe --dbpath="c:\data\db"
 2018-12-02T12:51:38.297+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
 
 
+See below for info on database name and collections.
+
 DEVELOPMENT ENVIRONMENT
 -----------------------
 
@@ -78,8 +81,10 @@ https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-drive
 
 3. Import  the source packages and classes layout as listed in this repository under "src" directory.
 
-MongoDB Name amd Collections Names are as defined in the header of the class MongoDBFloowDataActions.java.
-
+MongoDB Database Name amd Collections Names are as defined in the header of the class MongoDBFloowDataActions.java.
+There are 2 collections:
+1) Collection of unique words in the text with stats per word
+2) Collection of summary statistics for all the words in the text
 
 
 RUNNING THE PROGRAM
