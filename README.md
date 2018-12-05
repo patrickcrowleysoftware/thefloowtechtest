@@ -83,10 +83,12 @@ https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-drive
 
 3. Import  the source packages and classes layout as listed in this repository under "src" directory.
 
+DATABASE NAMING
+===============
 MongoDB Database Name amd Collections Names are as defined in the header of the class MongoDBFloowDataActions.java.
 There are 2 collections:
 1) Collection of unique words in the text with stats per word
-2) Collection of summary statistics for all the words in the text
+2) Collections of summary statistics for all the words in the text
 
 
 RUNNING THE PROGRAM
@@ -148,7 +150,11 @@ MONGO SHELL COMMANDS TO VALIDATE THE DATA
 
 > db.colltextwords.find()
 
-> db.colltextstats.find()
+> db.colltextstats1.find()
+> db.colltextstats2.find()
+> db.colltextstats3.find()
+> db.colltextstats4.find()
+> db.colltextstats5.find()
 
 
 GENERATING AN EXTERNAL JAR FILE
