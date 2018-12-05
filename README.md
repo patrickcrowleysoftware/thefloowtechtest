@@ -48,7 +48,7 @@ C:\Program Files\MongoDB\Server\4.0\bin>mongod.exe --dbpath="c:\data\db"
 See below for info on database name and collections.
 
 DEVELOPMENT ENVIRONMENT
------------------------
+=======================
 
 Eclipse was used as the IDE using Java 8
 
@@ -90,7 +90,7 @@ There are 2 collections:
 
 
 RUNNING THE PROGRAM
--------------------
+===================
 
 Program Arguments format:
 –source [source text file path] –mongo [hostname]:[port]
@@ -103,35 +103,51 @@ Right-click on the Java project "TheFloowEngineer" and select Run As -> Java App
 When creating a Run COnfiguration, EngineerMain.java class is the main entry point and the Arguments to set up should be as per the format above.
 
 Sample console output:
+---------------------
+
 Floow engineer program started
 Input source text file: c:\examine\AliceInWonderlandText.txt
 Input MongoDB Host: localhost
 Input MongoDB Port: 27017
-Dec 04, 2018 10:48:32 PM com.mongodb.diagnostics.logging.JULLogger log
+Dec 05, 2018 7:23:36 AM com.mongodb.diagnostics.logging.JULLogger log
 INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+DB Details :: theFloowChallengeDatabase
+Dec 05, 2018 7:23:37 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster description not yet available. Waiting for 30000 ms before timing out
+Dec 05, 2018 7:23:37 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:1, serverValue:88}] to localhost:27017
+Dec 05, 2018 7:23:37 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 4]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2518067}
+Dec 05, 2018 7:23:37 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:2, serverValue:89}] to localhost:27017
 The highest frequency word in the text is : "the" occurring 62 times
-The word in the text with most consonants is : "waistcoat-pocket" with 10 consonants
 The word in the text with most vowels is : "waistcoat-pocket" with 6 vowels
+The word in the text with most consonants is : "waistcoat-pocket" with 10 consonants
 The longest word in the text is : "waistcoat-pocket" with a length of 16 characters
 The word in the text with most occurrences of "b" is : "rabbit" with 2 occurrances
-DB Details :: theFloowChallengeDB5
-Dec 04, 2018 10:48:32 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Cluster description not yet available. Waiting for 30000 ms before timing out
-Dec 04, 2018 10:48:32 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:1, serverValue:84}] to localhost:27017
-Dec 04, 2018 10:48:32 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 4]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2219035}
-Dec 04, 2018 10:48:32 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:2, serverValue:85}] to localhost:27017
-Dec 04, 2018 10:48:33 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Closed connection [connectionId{localValue:2, serverValue:85}] to localhost:27017 because the pool has been closed.
+Dec 05, 2018 7:23:37 AM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Closed connection [connectionId{localValue:2, serverValue:89}] to localhost:27017 because the pool has been closed.
 
 Floow engineer program finished
 
 
+GENERATING AN EXTERNAL JAR FILE
+===============================
+I tested the program on a much smaller file "AliceInWonderlandText.txt" as I struggled to download the large Wiki one mentioned in the challenge.
+This file is also included in GIT.
 
-EXTERNAL JAR FILE
-=================
+
+MONGO SHELL COMMANDS TO VALIDATE THE DATA
+=========================================
+> cls
+> use theFloowChallengeDatabase
+> show collections
+> db.colltextwords.find()
+> db.colltextstats.find()
+
+
+GENERATING AN EXTERNAL JAR FILE
+===============================
 
 I did also export a .jar file also, however I could not get it to run on my Windows 10 laptop (administrator) either at a DOS command prompt or in CygWIn.
 I suspect a permission issue.
