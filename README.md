@@ -144,21 +144,13 @@ MONGO SHELL COMMANDS TO VALIDATE THE DATA
 
 > cls
 
-> use theFloowChallengeDatabase
+> use theFloowChallengeMongoDatabase
 
 > show collections
 
-> db.colltextwords.find()
+> db.flowcolltextwords.find()
 
-> db.colltextstats1.find()
-
-> db.colltextstats2.find()
-
-> db.colltextstats3.find()
-
-> db.colltextstats4.find()
-
-> db.colltextstats5.find()
+> db.flowcolltextstats.find()
 
 
 GENERATING AN EXTERNAL JAR FILE
