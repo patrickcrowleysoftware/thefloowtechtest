@@ -35,8 +35,8 @@ public class CalculateTextStats {
          
         System.out.println("The highest frequency word in the text is : \"" + word + "\" occurring " + String.valueOf(maxNumber) + " times");
         
-        BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxfrequencyword", word)
-        					.append("maxfrequencywordCount", String.valueOf(maxNumber));
+        BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("word", word)
+        					.append("statistic", "maxfrequencywordCount "+String.valueOf(maxNumber));
         
         return dbStatsBuilder.get();
     }
@@ -63,8 +63,8 @@ public class CalculateTextStats {
         
        System.out.println("The longest word in the text is : \"" + word + "\" with a length of " + String.valueOf(maxNumber) + " characters");
        
-       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxlengthword", word)
-				.append("maxcharsword", String.valueOf(maxNumber));
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("word", word)
+				.append("statistic", "maxcharsword "+String.valueOf(maxNumber));
 
        return dbStatsBuilder.get();
    }
@@ -91,8 +91,8 @@ public class CalculateTextStats {
         
        System.out.println("The word in the text with most vowels is : \"" + word + "\" with " + String.valueOf(maxNumber) + " vowels");
        
-       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxvowelsword", word)
-				.append("maxnumberofvowels", String.valueOf(maxNumber));
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("word", word)
+				.append("statistic", "maxnumberofvowels "+String.valueOf(maxNumber));
 
        return dbStatsBuilder.get();
    }
@@ -119,8 +119,8 @@ public class CalculateTextStats {
         
        System.out.println("The word in the text with most consonants is : \"" + word + "\" with " + String.valueOf(maxNumber) + " consonants");
        
-       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxconsonantsword", word)
-				.append("maxnumberofconsonants", String.valueOf(maxNumber));
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("word", word)
+				.append("statistic", "maxnumberofconsonants "+String.valueOf(maxNumber));
 
        return dbStatsBuilder.get();
    }
@@ -149,9 +149,8 @@ public class CalculateTextStats {
         
        System.out.println("The word in the text with most occurrences of \"" + String.valueOf(ch) + "\" is : \"" + word + "\" with " + String.valueOf(maxNumber) + " occurrances");
        
-       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("wordwithmostofletter", String.valueOf(ch))
-				.append("word", word)
-       			.append("occurrances", String.valueOf(maxNumber));
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("word", word)
+				.append("statistic", "mostoccurranceofletter-"+String.valueOf(ch)+"-occurrances "+String.valueOf(maxNumber));
 
        return dbStatsBuilder.get();
    }
