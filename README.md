@@ -139,10 +139,15 @@ This file is also included in GIT.
 
 MONGO SHELL COMMANDS TO VALIDATE THE DATA
 =========================================
+
 > cls
+
 > use theFloowChallengeDatabase
+
 > show collections
+
 > db.colltextwords.find()
+
 > db.colltextstats.find()
 
 
