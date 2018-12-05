@@ -4,8 +4,10 @@ DATABASE INFO
 
 MONGODB VERSION INSTALLED ON WINDOWS 10
 ---------------------------------------
-db Version V4.0.4
+Using DB Version V4.0.4
+
 Sample start-up console output:
+
 C:\WINDOWS\system32>cd C:\Program Files\MongoDB\Server\4.0\bin
 
 C:\Program Files\MongoDB\Server\4.0\bin>mongod.exe --dbpath="c:\data\db"
