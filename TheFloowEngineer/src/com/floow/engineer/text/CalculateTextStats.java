@@ -4,13 +4,16 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.DBObject;
+
 public class CalculateTextStats {
 
 	public CalculateTextStats() {
 		
 	}
 
-   public static void getStatsHighestFrequency(HashMap<String, WordStats> wordCountMap) {
+   public static DBObject getStatsHighestFrequency(HashMap<String, WordStats> wordCountMap) {
     	
         //Getting the most repeated word and its occurrence
         
@@ -32,9 +35,13 @@ public class CalculateTextStats {
          
         System.out.println("The highest frequency word in the text is : \"" + word + "\" occurring " + String.valueOf(maxNumber) + " times");
         
+        BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxfrequencyword", word)
+        					.append("maxfrequencywordCount", String.valueOf(maxNumber));
+        
+        return dbStatsBuilder.get();
     }
       
-   public static void getStatsLongestWord(HashMap<String, WordStats> wordCountMap) {
+   public static DBObject getStatsLongestWord(HashMap<String, WordStats> wordCountMap) {
    	
        //Getting the longest word in the text
        
@@ -56,9 +63,13 @@ public class CalculateTextStats {
         
        System.out.println("The longest word in the text is : \"" + word + "\" with a length of " + String.valueOf(maxNumber) + " characters");
        
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxlengthword", word)
+				.append("maxcharsword", String.valueOf(maxNumber));
+
+       return dbStatsBuilder.get();
    }
      
-   public static void getStatsMostVowels(HashMap<String, WordStats> wordCountMap) {
+   public static DBObject getStatsMostVowels(HashMap<String, WordStats> wordCountMap) {
    	
        //Getting the word with the most vowels in the text
        
@@ -80,9 +91,13 @@ public class CalculateTextStats {
         
        System.out.println("The word in the text with most vowels is : \"" + word + "\" with " + String.valueOf(maxNumber) + " vowels");
        
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxvowelsword", word)
+				.append("maxnumberofvowels", String.valueOf(maxNumber));
+
+       return dbStatsBuilder.get();
    }
      
-   public static void getStatsMostConsonants(HashMap<String, WordStats> wordCountMap) {
+   public static DBObject getStatsMostConsonants(HashMap<String, WordStats> wordCountMap) {
 	   	
        //Getting the word with the most consonants in the text
        
@@ -104,9 +119,13 @@ public class CalculateTextStats {
         
        System.out.println("The word in the text with most consonants is : \"" + word + "\" with " + String.valueOf(maxNumber) + " consonants");
        
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("maxconsonantsword", word)
+				.append("maxnumberofconsonants", String.valueOf(maxNumber));
+
+       return dbStatsBuilder.get();
    }
      
-   public static void getStatsWordWithMostOccurrancesOfChar(HashMap<String, WordStats> wordCountMap, char ch) {
+   public static DBObject getStatsWordWithMostOccurrancesOfChar(HashMap<String, WordStats> wordCountMap, char ch) {
 	   	
        //Getting the word in the text with the most occurrances of character "ch"
        
@@ -130,6 +149,11 @@ public class CalculateTextStats {
         
        System.out.println("The word in the text with most occurrences of \"" + String.valueOf(ch) + "\" is : \"" + word + "\" with " + String.valueOf(maxNumber) + " occurrances");
        
+       BasicDBObjectBuilder dbStatsBuilder = BasicDBObjectBuilder.start("wordwithmostofletter", String.valueOf(ch))
+				.append("word", word)
+       			.append("occurrances", String.valueOf(maxNumber));
+
+       return dbStatsBuilder.get();
    }
      
    private static int countMatches(String s, char ch) {

@@ -110,8 +110,10 @@ public class EngineerMain {
 		// Write the words data
 		mdbFloowActions.writeTextWords(wordCountMap);
 		
-		// Create Interesting Stats collection
-		// mdbFloowActions.createTextStatsCollection();
+		// Create interesting statistics collection
+		mdbFloowActions.createTextStatsCollection();
+		// Write the interesting statistics data
+		mdbFloowActions.writeTextStats(wordCountMap);
 
 	}
 

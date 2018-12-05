@@ -13,6 +13,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import com.floow.engineer.utils.WordUtils;
+import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.DBObject;
 
 public class ProcessText {
 
@@ -66,17 +68,6 @@ public class ProcessText {
                 currentLine = reader.readLine();
             }
              
-        
-            // Methods used just to test the data in memory
-            // Comment out when tests are completed
-            CalculateTextStats.getStatsHighestFrequency(wordCountMap);
-
-            CalculateTextStats.getStatsMostConsonants(wordCountMap);
-            CalculateTextStats.getStatsMostVowels(wordCountMap);
-
-            CalculateTextStats.getStatsLongestWord(wordCountMap);
-            CalculateTextStats.getStatsWordWithMostOccurrancesOfChar(wordCountMap, 'b');
-
             // Use for debug only
             // CalculateTextStats.dumpWordList(wordCountMap);
             
@@ -84,6 +75,8 @@ public class ProcessText {
             
             reader.close();           //Closing the reader
         }
+
+        return;
     }    
- 
+    
 }
