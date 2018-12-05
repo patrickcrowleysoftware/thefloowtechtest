@@ -151,9 +151,13 @@ MONGO SHELL COMMANDS TO VALIDATE THE DATA
 > db.colltextwords.find()
 
 > db.colltextstats1.find()
+
 > db.colltextstats2.find()
+
 > db.colltextstats3.find()
+
 > db.colltextstats4.find()
+
 > db.colltextstats5.find()
 
 
